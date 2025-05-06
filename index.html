@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>足球数据库 by不霁何虹 - 每日赛事预测</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <header class="mb-8">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-black">
+                        <path d="M20 4C11.1634 4 4 11.1634 4 20C4 28.8366 11.1634 36 20 36C28.8366 36 36 28.8366 36 20C36 11.1634 28.8366 4 20 4ZM20 6C27.7552 6 34 12.2448 34 20C34 27.7552 27.7552 34 20 34C12.2448 34 6 27.7552 6 20C6 12.2448 12.2448 6 20 6Z" fill="currentColor"/>
+                        <path d="M20 8L13.7157 14.2843L20 20.5686L26.2843 14.2843L20 8Z" fill="currentColor"/>
+                        <path d="M12.3431 15.6569L8 20L12.3431 24.3431L16.6863 20L12.3431 15.6569Z" fill="currentColor"/>
+                        <path d="M20 21.4314L13.7157 27.7157L20 34L26.2843 27.7157L20 21.4314Z" fill="currentColor"/>
+                        <path d="M27.6569 15.6569L23.3137 20L27.6569 24.3431L32 20L27.6569 15.6569Z" fill="currentColor"/>
+                    </svg>
+                    <h1 class="text-2xl font-bold">足球数据库 by不霁何虹</h1>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="#" class="text-gray-900 hover:text-gray-600 font-medium">首页</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-gray-600 font-medium">赛程</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-gray-600 font-medium">数据</a></li>
+                        <li><a href="#" class="text-gray-500 hover:text-gray-600 font-medium">关于</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="mb-8">
+            <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white rounded-xl p-8 shadow-sm">
+                <h2 class="text-xl font-semibold mb-2">今日赛事预测</h2>
+                <p class="text-gray-300 mb-4">基于专业数据分析的足球赛事预测，助您洞察比赛走势</p>
+                <div class="flex flex-wrap gap-3 mb-4">
+                    <button class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-md text-sm font-medium transition">今日热门</button>
+                    <button class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-md text-sm font-medium transition">高胜率</button>
+                    <button class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-md text-sm font-medium transition">五大联赛</button>
+                    <button class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-md text-sm font-medium transition">欧冠</button>
+                </div>
+                <div class="bg-white/5 rounded-lg p-4 text-sm">
+                    <h3 class="font-semibold mb-2 text-blue-300">预测模型说明</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <p><span class="text-blue-300 font-medium">贝叶斯定理模型：</span>基于历史数据和实时赔率，动态调整胜平负概率。通过先验概率与似然函数的结合，提供更准确的预测结果。</p>
+                        <p><span class="text-blue-300 font-medium">泊松分布模型：</span>分析球队进攻效率，预测进球数分布。结合球队近期进攻数据，计算不同比分出现的概率。</p>
+                        <p><span class="text-blue-300 font-medium">蒙特卡洛模拟：</span>通过大量随机模拟比赛过程，评估各种可能的结果。考虑球员状态、天气、场地等随机因素影响。</p>
+                        <p><span class="text-blue-300 font-medium">动态权重分析：</span>根据赛事重要性、球队状态、历史交锋等因素，动态调整各模型权重，确保预测结果的最优性。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-10">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-bold">今日赛事预测分析</h2>
+                <div class="flex items-center gap-2 text-sm">
+                    <span class="text-gray-500">2025年5月7日</span>
+                    <button class="p-1.5 rounded-full hover:bg-gray-100 transition">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- 比赛1 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="border-b border-gray-100 px-6 py-4 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <span class="font-geist-mono text-xs bg-indigo-100 text-indigo-700 rounded px-2 py-0.5 mr-3">日职</span>
+                            <span class="text-sm text-gray-500">13:00</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded">中置信</span>
+                            <button class="p-1 hover:bg-gray-100 rounded transition">
+                                <i data-lucide="bookmark" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="px-6 py-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="flex flex-col items-center">
+                                <img src="xiangnan.png" alt="湘南海洋" class="w-16 h-16 object-contain mb-2">
+                                <span class="font-medium">湘南海洋</span>
+                            </div>
+                            <div class="text-center px-4">
+                                <div class="font-bold text-2xl mb-1">VS</div>
+                                <span class="text-xs text-gray-500">未开始</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="guagndao.png" alt="广岛三箭" class="w-16 h-16 object-contain mb-2">
+                                <span class="font-medium">广岛三箭</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h3 class="text-sm font-bold mb-2">赔率信息</h3>
+                            <div class="grid grid-cols-3 text-center">
+                                <div class="p-2 border rounded-l-md border-r-0">
+                                    <div class="text-sm">主胜</div>
+                                    <div class="font-geist-mono text-lg font-semibold">3.45</div>
+                                </div>
+                                <div class="p-2 border">
+                                    <div class="text-sm">平局</div>
+                                    <div class="font-geist-mono text-lg font-semibold">3.30</div>
+                                </div>
+                                <div class="p-2 border rounded-r-md border-l-0">
+                                    <div class="text-sm">客胜</div>
+                                    <div class="font-geist-mono text-lg font-semibold">2.10</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="text-sm font-bold mb-2">预测模型分析</h3>
+                            <div class="w-full bg-gray-100 rounded-full h-4 mb-2">
+                                <div class="bg-blue-600 h-4 rounded-full progress-bar-j-league" style="width: 60.75%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>湘南海洋 39.25%</span>
+                                <span>广岛三箭 60.75%</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-bold mb-2">预测结果</h3>
+                            <p class="text-sm text-gray-700">
+                                广岛三箭客场作战略占优势，主要得益于其近期状态和历史交锋记录。湘南海洋的主场因素未能完全抵消这些差距。
+                                <strong class="text-blue-700">谨慎推荐 广岛三箭 不败，倾向客胜。</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 比赛2 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="border-b border-gray-100 px-6 py-4 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <span class="font-geist-mono text-xs bg-blue-100 text-blue-700 rounded px-2 py-0.5 mr-3">欧冠</span>
+                            <span class="text-sm text-gray-500">21:00</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded">中置信</span>
+                            <button class="p-1 hover:bg-gray-100 rounded transition">
+                                <i data-lucide="bookmark" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="px-6 py-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="flex flex-col items-center">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Paris_Saint-Germain_F.C..svg/1200px-Paris_Saint-Germain_F.C..svg.png" alt="巴黎圣日尔曼" class="w-16 h-16 object-contain mb-2">
+                                <span class="font-medium">巴黎圣日尔曼</span>
+                            </div>
+                            <div class="text-center px-4">
+                                <div class="font-bold text-2xl mb-1">VS</div>
+                                <span class="text-xs text-gray-500">未开始</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/1200px-Arsenal_FC.svg.png" alt="阿森纳" class="w-16 h-16 object-contain mb-2">
+                                <span class="font-medium">阿森纳</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h3 class="text-sm font-bold mb-2">赔率信息</h3>
+                            <div class="grid grid-cols-3 text-center">
+                                <div class="p-2 border rounded-l-md border-r-0">
+                                    <div class="text-sm">主胜</div>
+                                    <div class="font-geist-mono text-lg font-semibold">2.25</div>
+                                </div>
+                                <div class="p-2 border">
+                                    <div class="text-sm">平局</div>
+                                    <div class="font-geist-mono text-lg font-semibold">3.20</div>
+                                </div>
+                                <div class="p-2 border rounded-r-md border-l-0">
+                                    <div class="text-sm">客胜</div>
+                                    <div class="font-geist-mono text-lg font-semibold">3.10</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="text-sm font-bold mb-2">预测模型分析</h3>
+                            <div class="w-full bg-gray-100 rounded-full h-4 mb-2">
+                                <div class="bg-blue-600 h-4 rounded-full progress-bar-champions" style="width: 61.75%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>巴黎圣日尔曼 61.75%</span>
+                                <span>阿森纳 38.25%</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-bold mb-2">预测结果</h3>
+                            <p class="text-sm text-gray-700">
+                                强强对话，巴黎主场略有优势，但核心球员潜在伤停构成隐患。阿森纳状态同样出色。杯赛性质使得近期状态更为关键。
+                                <strong class="text-blue-700">谨慎推荐 巴黎圣日尔曼 不败，需关注赛前最终伤停名单。</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-10">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-bold">明日赛事预测分析</h2>
+                <div class="flex items-center gap-2 text-sm">
+                    <span class="text-gray-500">2025年5月9日</span>
+                    <button class="p-1.5 rounded-full hover:bg-gray-100 transition">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <!-- 比赛3 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="border-b border-gray-100 px-6 py-4 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <span class="font-geist-mono text-xs bg-orange-100 text-orange-700 rounded px-2 py-0.5 mr-3">欧罗巴</span>
+                            <span class="text-sm text-gray-500">20:45</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded">中置信</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex flex-col items-center">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png" alt="曼彻斯特联" class="w-12 h-12 object-contain mb-2">
+                                <span class="text-sm font-medium">曼联</span>
+                            </div>
+                            <div class="text-center px-3">
+                                <div class="font-bold text-xl mb-1">VS</div>
+                                <span class="text-xs text-gray-500">未开始</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="biba.jpg" alt="毕尔巴鄂竞技" class="w-12 h-12 object-contain mb-2">
+                                <span class="text-sm font-medium">毕尔巴鄂</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="w-full bg-gray-100 rounded-full h-3 mb-1">
+                                <div class="bg-blue-600 h-3 rounded-full progress-bar-europa" style="width: 65.5%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>曼联 65.5%</span>
+                                <span>毕尔巴鄂 34.5%</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-gray-700">
+                                <strong class="text-blue-700">谨慎推荐 曼彻斯特联 胜。</strong>
+                                曼联在主场及赔率数据上占据明显优势，尽管近期状态并非最佳，但毕尔巴鄂客场挑战豪门难度较大。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 比赛4 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="border-b border-gray-100 px-6 py-4 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <span class="font-geist-mono text-xs bg-orange-100 text-orange-700 rounded px-2 py-0.5 mr-3">欧罗巴</span>
+                            <span class="text-sm text-gray-500">20:45</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded">中置信</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex flex-col items-center">
+                                <img src="bodeshanyao.svg" alt="博德闪耀" class="w-12 h-12 object-contain mb-2">
+                                <span class="text-sm font-medium">博德闪耀</span>
+                            </div>
+                            <div class="text-center px-3">
+                                <div class="font-bold text-xl mb-1">VS</div>
+                                <span class="text-xs text-gray-500">未开始</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/1200px-Tottenham_Hotspur.svg.png" alt="热刺" class="w-12 h-12 object-contain mb-2">
+                                <span class="text-sm font-medium">热刺</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="w-full bg-gray-100 rounded-full h-3 mb-1">
+                                <div class="bg-blue-600 h-3 rounded-full progress-bar-europa" style="width: 58.25%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>博德闪耀 41.75%</span>
+                                <span>热刺 58.25%</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-gray-700">
+                                <strong class="text-blue-700">谨慎推荐 托特纳姆热刺 不败，防冷。</strong>
+                                热刺整体实力占优，但博德闪耀的魔鬼主场及热刺潜在的轮换和战意保留，使得比赛悬念增加。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 比赛5 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                    <div class="border-b border-gray-100 px-6 py-4 flex justify-between items-center">
+                        <div class="flex items-center">
+                            <span class="font-geist-mono text-xs bg-purple-100 text-purple-700 rounded px-2 py-0.5 mr-3">欧协联</span>
+                            <span class="text-sm text-gray-500">21:00</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs px-2 py-0.5 bg-yellow-100 text-yellow-700 rounded">低置信</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex flex-col items-center">
+                                <img src="foluoluns.png" alt="佛罗伦萨" class="w-12 h-12 object-contain mb-2">
+                                <span class="text-sm font-medium">佛罗伦萨</span>
+                            </div>
+                            <div class="text-center px-3">
+                                <div class="font-bold text-xl mb-1">VS</div>
+                                <span class="text-xs text-gray-500">未开始</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <img src="beidisi.png" alt="皇家贝蒂斯" class="w-12 h-12 object-contain mb-2">
+                                <span class="text-sm font-medium">皇家贝蒂斯</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="w-full bg-gray-100 rounded-full h-3 mb-1">
+                                <div class="bg-blue-600 h-3 rounded-full progress-bar-conference" style="width: 55%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500">
+                                <span>佛罗伦萨 55%</span>
+                                <span>皇家贝蒂斯 45%</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-gray-700">
+                                <strong class="text-blue-700">谨慎看好 佛罗伦萨 不败。</strong>
+                                预计一场均势对抗，佛罗伦萨主场稍占微弱优势，双方实力接近，欧协联双方战意均较高。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-center">
+                <button class="px-4 py-2 border border-gray-300 rounded-md text-gray-600 hover:bg-gray-50 font-medium transition flex items-center gap-2">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                    <span>加载更多赛事</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-xl font-bold mb-6">数据统计与走势分析</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+                    <h3 class="text-base font-semibold mb-4 flex items-center">
+                        <i data-lucide="bar-chart-2" class="w-5 h-5 mr-2"></i>
+                        预测成功率统计
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm">
+                                <span>高置信预测</span>
+                                <span class="font-geist-mono font-semibold">78.5%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 78.5%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm">
+                                <span>中置信预测</span>
+                                <span class="font-geist-mono font-semibold">62.3%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 62.3%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm">
+                                <span>低置信预测</span>
+                                <span class="font-geist-mono font-semibold">51.8%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-yellow-600 h-2 rounded-full" style="width: 51.8%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+                    <h3 class="text-base font-semibold mb-4 flex items-center">
+                        <i data-lucide="trophy" class="w-5 h-5 mr-2"></i>
+                        联赛赔率异常指数
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm">
+                                <span>英超</span>
+                                <span class="font-geist-mono font-semibold">低</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 35%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm">
+                                <span>西甲</span>
+                                <span class="font-geist-mono font-semibold">中</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 55%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm">
+                                <span>意甲</span>
+                                <span class="font-geist-mono font-semibold">高</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+                    <h3 class="text-base font-semibold mb-4 flex items-center">
+                        <i data-lucide="trending-up" class="w-5 h-5 mr-2"></i>
+                        热门球队近期走势
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm">
+                                <span>曼彻斯特联</span>
+                                <span class="flex">
+                                    <span class="w-4 h-4 rounded-full bg-green-500 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-green-500 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-gray-300 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-green-500 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-red-500"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm">
+                                <span>巴黎圣日尔曼</span>
+                                <span class="flex">
+                                    <span class="w-4 h-4 rounded-full bg-green-500 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-green-500 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-green-500 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-gray-300 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-green-500"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm">
+                                <span>阿森纳</span>
+                                <span class="flex">
+                                    <span class="w-4 h-4 rounded-full bg-green-500 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-red-500 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-green-500 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-green-500 mr-0.5"></span>
+                                    <span class="w-4 h-4 rounded-full bg-gray-300"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+                <h2 class="text-xl font-bold mb-4">预测方法论</h2>
+                <p class="text-gray-700 mb-4">
+                    我们的预测基于多因素综合分析模型，核心预测因子及其权重分配如下：
+                </p>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">预测因子</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">权重系数</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">赔率指标</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">35%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">基于国内体彩赔率趋势分析</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">近期状态</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">25%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">球队最近5场比赛表现</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">交锋历史</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">双方历史交锋记录分析</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">主客场优势</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">场地因素影响评估</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">伤停影响</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">伤病停赛对阵容影响</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">赛事动机</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5%</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">战意与比赛重要性</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4">
+                    <h3 class="text-sm font-semibold mb-2">置信度判定标准</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="border rounded p-3">
+                            <div class="flex items-center mb-2">
+                                <div class="w-3 h-3 mr-2 rounded-full bg-red-500"></div>
+                                <span class="text-sm font-medium">不确定</span>
+                            </div>
+                            <span class="text-xs text-gray-500">胜率预测值 &lt;40%</span>
+                        </div>
+                        <div class="border rounded p-3">
+                            <div class="flex items-center mb-2">
+                                <div class="w-3 h-3 mr-2 rounded-full bg-yellow-500"></div>
+                                <span class="text-sm font-medium">低置信</span>
+                            </div>
+                            <span class="text-xs text-gray-500">胜率预测值 40%-55%</span>
+                        </div>
+                        <div class="border rounded p-3">
+                            <div class="flex items-center mb-2">
+                                <div class="w-3 h-3 mr-2 rounded-full bg-green-500"></div>
+                                <span class="text-sm font-medium">中置信</span>
+                            </div>
+                            <span class="text-xs text-gray-500">胜率预测值 55%-70%</span>
+                        </div>
+                        <div class="border rounded p-3">
+                            <div class="flex items-center mb-2">
+                                <div class="w-3 h-3 mr-2 rounded-full bg-blue-500"></div>
+                                <span class="text-sm font-medium">高置信</span>
+                            </div>
+                            <span class="text-xs text-gray-500">胜率预测值 &gt;70%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-6 text-sm text-gray-500 border-t">
+            <p>数据仅供参考，请理性对待。禁止用于非法博彩活动。</p>
+            <p class="mt-2">反关体育 by不霁何虹</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener("wheel", (e)=> {
+            const isPinching = e.ctrlKey
+            if(isPinching) e.preventDefault()
+        }, { passive: false })
+    </script>
+</body>
+</html>
